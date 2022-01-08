@@ -10,6 +10,14 @@ import com.google.firebase.auth.FirebaseAuth
 
 class Menu : AppCompatActivity() {
 
+
+    private lateinit var buttonCars : Button
+    private lateinit var buttonMyGarage: Button
+    private lateinit var buttonProfile: Button
+    private lateinit var buttonParameters : Button
+
+
+
     private lateinit var buttonLogout: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,14 +25,19 @@ class Menu : AppCompatActivity() {
         setContentView(R.layout.activity_menu)
 
         init()
-
         registerListeners()
+        profileListeners()
 
     }
 
     private fun init() {
         buttonLogout = findViewById(R.id.button12)
+        buttonCars = findViewById(R.id.button7)
+        buttonMyGarage = findViewById(R.id.button8)
+        buttonProfile = findViewById(R.id.button9)
+        buttonParameters = findViewById(R.id.button11)
     }
+
 
     private fun registerListeners() {
         buttonLogout.setOnClickListener() {
@@ -33,6 +46,12 @@ class Menu : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+    }
+
+    private fun profileListeners() {
+        val intent = Intent(this, Profile::class.java)
+        startActivity(intent)
+        finish()
     }
 
 }

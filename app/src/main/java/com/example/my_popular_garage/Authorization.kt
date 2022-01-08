@@ -40,7 +40,7 @@ class Authorization : AppCompatActivity() {
     private fun loginListeners() {
 
         buttonLogin.setOnClickListener{
-            val intent = Intent(this, Register::class.java)
+            val intent = Intent(this, Menu::class.java)
             startActivity(intent)
         }
 
@@ -73,6 +73,8 @@ class Authorization : AppCompatActivity() {
                         val intent = Intent(this, Menu::class.java)
                         startActivity(intent)
                         finish()
+                    } else {
+                        Toast.makeText(this, "Error!", Toast.LENGTH_SHORT).show()
                     }
                 }
 
@@ -80,11 +82,6 @@ class Authorization : AppCompatActivity() {
 
     }
 
-    private fun menu() {
-        val intent = Intent(this, Menu::class.java)
-        startActivity(intent)
-        finish()
-    }
 
 
 }

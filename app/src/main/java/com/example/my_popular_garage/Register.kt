@@ -40,6 +40,7 @@ class Register : AppCompatActivity() {
             val email = editTextEmail.text.toString()
             val password = editTextPassword.text.toString()
             val password2 = editTextPassword2.text.toString()
+            val name = editTextName.text.toString()
 
 
             if (email.isEmpty()) {
@@ -67,6 +68,10 @@ class Register : AppCompatActivity() {
             }
             else if(password.length<8){
                 editTextPassword.error = "პაროლი უნდა შეიცავდეს მინიმუმ 8 სიმბოლოს"
+                return@setOnClickListener
+            }
+            else if (name.isEmpty()) {
+                editTextName.error = "შეიყვანეთ სახელი!"
                 return@setOnClickListener
             }
 
